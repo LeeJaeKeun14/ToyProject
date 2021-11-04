@@ -1,8 +1,8 @@
 import './App.css';
 import {
+  BrowserRouter,
+  Routes,
   Route,
-  useHistory,
-  useParams,
 } from "react-router-dom";
 
 
@@ -14,11 +14,11 @@ function App() {
   }
 
   return (
-    <div>
-      <Route exact path="/">
-        <Testing />
-      </Route>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Testing />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
