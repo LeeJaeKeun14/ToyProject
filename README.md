@@ -166,3 +166,22 @@ React와 Flask 서버에 올리고, 환경 관리
 - 연결 성공..........
 
 - 내일은 플라스크다...
+
+***
+
+- 4일차
+
+- sudo apt-get update
+- sudo apt-get python3.8
+- sudo apt intall python3-pip
+- pip3 install flask
+- pip3 install requests
+- pip3 install flask_restful
+- pip3 install pymysql
+
+- sudo npm install axios
+
+...그리고 로컬에서 실험도 안하고 서버로 올리지 말자...
+- CORS 문제발생... proxy
+- npm install http-proxy-middleware
+- 기브업... CORS 문제를 어떻게든 해결해야한다...

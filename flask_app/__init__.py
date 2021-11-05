@@ -1,15 +1,13 @@
-from flask import Flask, jsonify
+from flask import Flask
 
-app = Flask(__name__)
+def create_app(test_config=None):
+    app = Flask(__name__, instance_relative_config=True)
 
-@app.route('/')
-def index():
-    return "서버 플라스크 연동"
+    from . import user
+    app.register_blueprint(user.bp)
 
-@app.route("/user", methods=["GET"])
-def test_get():
+    @app.route('/')
+    def index():
+        return '노래방 북마크 프로젝트입니다.'
 
-    return jsonify({"status":200, "user": "elice"})
-
-if __name__ == '__main__':
-	app.run(debug=True)
+    return app

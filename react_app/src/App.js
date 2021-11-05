@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react'
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import {
   BrowserRouter,
@@ -9,15 +9,33 @@ import {
 
 function App() {
   const [user, setUser] = useState("Loading")
+  const [name, setName] = useState("Loading")
   
   const Testing = () => {
-    axios.get("https://localhost:5000/users")
-      .then(response => {
-        setUser(response.user)
-        console.log(response.status)
-      });
+
+    useEffect(() => {
+      // axios.get("/users=Lee")
+      //   .then(response => {
+      //     console.log("여기까지는 응답")
+      //     setUser(response.user)
+      //     console.log(response.status)
+      //   })
+      //   .catch(
+      //     console.log("야 큰일이다 접근 못한다.")
+      //   );
+        
+      axios.post("/get/post", {"user": "elice"})
+        .then(response => {
+          console.log("여기까지는 응답")
+          setName(response.user)
+          console.log(response.user)
+        })
+        .catch(
+          console.log("야 포스트도 망했다.")
+        );
+    }, [])
   
-    return <p>{user}...</p>
+    return <p>{user}...{name}</p>
   }
 
   return (
