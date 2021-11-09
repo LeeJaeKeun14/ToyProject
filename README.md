@@ -183,6 +183,21 @@ React와 Flask 서버에 올리고, 환경 관리
 - sudo npm install axios
 
 ...그리고 로컬에서 실험도 안하고 서버로 올리지 말자...
+
 - CORS 문제발생... proxy
 - npm install http-proxy-middleware
 - 기브업... CORS 문제를 어떻게든 해결해야한다...
+
+***
+
+- 5일차
+
+- CORS 문제 해결, Flask 에서 모든 접근을 허용
+  - 보안 문제발생, flask 포트는 GCP 방화벽에 차단당하지만 접근 보안 고민
+
+- `export FLASK_ENV=development`
+- `export FLASK_DEBUG=1`
+- `export FLASK_APP=flask_app/__init__.py`
+
+- flask가 안되는 건가, react에서 방화벽에 막혀서
+- api를 못가져오는건가?
