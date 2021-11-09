@@ -178,6 +178,7 @@ React와 Flask 서버에 올리고, 환경 관리
 - pip3 install requests
 - pip3 install flask_restful
 - pip3 install pymysql
+- pip3 install flask_cors
 
 - sudo npm install axios
 

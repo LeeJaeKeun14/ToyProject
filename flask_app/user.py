@@ -7,7 +7,7 @@ api = Api(bp)
 
 class Search(Resource):
     def get(self):
-        data = request.args.get('users', None)
+        data = [{"user": "elice"}]
         
         return jsonify(data)
     
